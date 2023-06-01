@@ -4,7 +4,13 @@ void main() {
   var y = [];
   List z = [1, 2, "hello"];
   List<int> l1 = <int>[1, 2, 3, 4, 5]; // length is 5 index range from 0 to 4
+  print("x= $x");
 
+  print("y=$y");
+
+  print(l1[2]);
+
+  print("z=$z");
   l1.add(10); // 10 added to to 5th index
   l1.add(1000); //to add a single value to existing list
   l1.addAll([1, 6, 9, 6]); // to add a group of values to the existing list
@@ -28,7 +34,8 @@ void main() {
 
   ///2.List.empty({bool growable = false});//by-default l2 is fixed length list
   var l2 = List.empty(
-      growable:true); //we changed l2 to growable list by changing the value of " growable = true"
+      growable:
+          true); //we changed l2 to growable list by changing the value of " growable = true"
   print(l2);
 
   l2.add(20);
@@ -48,18 +55,25 @@ void main() {
   print("l4=$l4");
 
 //List.unmodifiable- can't modify this list
-  var l5 = List.unmodifiable(l4);
-  l5[2] = 100;
-  print("l5=$l5");
+  // var l5 = List.unmodifiable(l4);
+  // l5[2] = 100;
+  // print("l5=$l5");
 
+  //6.List.filled(int length, E fill,{bool growable=false})
+  //length=how many values we store inthis list
+  //fill=value that we stored in the list
 
-  print("x= $x");
+  var l6 = List.filled(10, 1, growable: true);
+  l6[1] = 2;
+  l6[2] = 4;
+  l6[5] = 5;
+  l6[4] = 6;
+  l6.add(100);
+  print("l6=$l6");
 
-  print("y=$y");
-
-  print(l1[2]);
-
-  print("z=$z");
+  //7 List.generate(int length, E generator(int index), {bool growable = true});
+  var l7 = List.generate(10, (index) => (index+1)*10);
+  print("l7=$l7");
 
   for (int index = 0; index < l1.length; index++) {
     print(l1[index]);
