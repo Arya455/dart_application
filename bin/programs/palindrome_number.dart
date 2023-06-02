@@ -2,20 +2,28 @@ import 'dart:io';
 
 void main() {
   print("enter a number");
-  int n = int.parse(stdin.readLineSync()!);
+  int n = int.parse(stdin.readLineSync()!);//user input
+
   int remainder;
   int rev =0;
-  int temp = n;
+  int temp = n;//initialization
 
-  while (n > 0) {
+  while (n > 0) {//loop
     remainder = n % 10;
     rev = (rev * 10) + remainder;
-    n = n ~/ 10;
+    n = n ~/ 10;//avoiding decimal value
   }
 
-  if (temp == rev) {
+  if (temp == rev) { //checking the condition
+
     print("palindrome number");
-  } else {
+
+  } 
+  else 
+  {
+
     print("Not a palindrome");
+
   }
+
 }
