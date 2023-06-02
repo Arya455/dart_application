@@ -11,6 +11,6 @@ void main() {  //main
     fact *= i;
   }
 
-  print("fact= $fact");//result printing
+  print("factorial of a number is $fact");//result printing
 
 }
